@@ -95,7 +95,7 @@ const App = () => {
 
                 <p>NOOOO Autorizado</p>
                 <SpotifyAuth
-                  redirectUri='http://localhost:8080'
+                  redirectUri='https://spoty-zeta.vercel.app:8080'
                   clientID='bb61555b9c4b48398ccf4b57227670cd'
                   scopes={[Scopes.userReadPrivate, 'user-read-email']} // either style will work
                 />
