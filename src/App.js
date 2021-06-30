@@ -64,9 +64,13 @@ const App = () => {
         </div>
         {/*<ListContext.Provider value={{selectedList, setSelectedList}}>*/}
         <div id="sidebar">
-        <ErrorBoundary>
-          <Playlists token={token}></Playlists>
-        </ErrorBoundary>
+          {token?(
+            <ErrorBoundary>
+            <Playlists token={token}></Playlists>
+            </ErrorBoundary>
+          ):(
+            <></>
+          )}
         </div>
         <div id="main">
         <Suspense fallback={<p>Loading ...</p>}>
@@ -93,7 +97,7 @@ const App = () => {
 
               <div>
 
-                <p>NOOOO Autorizado</p>
+                <h1>Welcome to Spoty Profile</h1>
                 <SpotifyAuth
                   redirectUri='https://spoty-zeta.vercel.app/'
                   clientID='bb61555b9c4b48398ccf4b57227670cd'

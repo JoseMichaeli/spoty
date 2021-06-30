@@ -21,7 +21,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+.inline { 
+  display: inline-block; 
+  margin:10px;
+  }
 
 
 .left

@@ -46,14 +46,20 @@ const ShowSongs = ({token}) => {
     return(
         {songs} && Array.isArray(listImage) && listImage.length > 0 ? (
         <div>
-            <div><img id="list-image" src={listImage[0].url}  x="0" y="0" height="168px" preserveAspectRatio="xMidYMid slice"  width="168px" ></img></div>
-            <strong>List Name: {listName}</strong>
+            <div >
+                <div>
+            <img id="list-image" src={listImage[0].url}  x="0" y="0" height="168px" preserveAspectRatio="xMidYMid slice"  width="168px" ></img>
+            </div>
+            <div>
+            <h1>{`\u00A0\u00A0\u00A0 ${listName}`}</h1>
+            </div>
+            </div>
             <ul>
             {
                 (Array.isArray(songsArray)) ? 
                 (
                         songsArray.map( (song) =>{
-                            return(<li key={song.track.id} ><img src={song.track.album.images[2].url}></img>{song.track.name + ' - ' + song.track.artists[0].name }</li>)
+                            return(<li key={song.track.id} ><img src={song.track.album.images[2].url}></img>{`\u00A0\u00A0\u00A0` + song.track.name + ' - ' + song.track.artists[0].name }</li>)
 
                         }
                         )
