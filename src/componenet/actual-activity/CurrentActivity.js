@@ -38,8 +38,9 @@ export const CurrentActivity = (token) => {
                     
                 </div>
             </div>
-            <div className="right">
+            
                 {tokenValue ?(
+                    <div className="right">
                     <div style={{color:"white"}} >
                         <h1>{display_name}'s Profile</h1>
                         <strong>Currently is  {is_playing ? (' playing '): (' Not playing anything')} </strong> <br/>
@@ -47,13 +48,14 @@ export const CurrentActivity = (token) => {
                     <strong>{is_playing ? ('of the band ' + band):('')} </strong><br/>
                     <strong>{is_playing ? ('from the Album ' + album ) : ('')}</strong><br/>
                     </div>
+                    </div>
                 ):
                 (
-                    <div><h1 style={{color:"white"}}>Sopty Profile</h1></div>
+                    <div className="start-header"><h1 style={{color:"white"}}>Sopty Profile</h1></div>
                 )}
                 
 
-            </div>
+            
         </div>
     )
 }
