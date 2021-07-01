@@ -38,19 +38,17 @@ export const Playlists = (token) => {
     )
 */
     return (
-        <Accordion >
+        <div id="playlist-div">
             <Card>
-                <Accordion.Toggle as={Card.Header} eventKey="0">
-                    Playlists
-                </Accordion.Toggle>
+                    <Card.Header>
+                    <strong>Playlists</strong>
+                    </Card.Header>
                 
                 {(items) ? (
                     items.map(item => (
-                        <Accordion.Collapse key={item.id} eventKey="0" >
                        
-                            <Card.Body> <Link ref={accordeon} to={'/songs_of_list/' + item.id} >{item.name}</Link></Card.Body>
+                            <Card.Body> <strong><Link ref={accordeon} to={'/songs_of_list/' + item.id} >{item.name}</Link></strong></Card.Body>
                        
-                        </Accordion.Collapse>
                     ))) : (
                         <div>
                     <p>The user has no lists</p>
@@ -58,7 +56,7 @@ export const Playlists = (token) => {
                 )
                 }
             </Card>
-        </Accordion>
+        </div>
     )
 }
 

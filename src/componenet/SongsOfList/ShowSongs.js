@@ -46,20 +46,21 @@ const ShowSongs = ({token}) => {
     return(
         {songs} && Array.isArray(listImage) && listImage.length > 0 ? (
         <div>
-            <div >
-                <div>
-            <img id="list-image" src={listImage[0].url}  x="0" y="0" height="168px" preserveAspectRatio="xMidYMid slice"  width="168px" ></img>
-            </div>
             <div>
+            <div id="list-image" > 
+            <img  src={listImage[0].url}  x="0" y="0" height="168px" preserveAspectRatio="xMidYMid slice"  width="168px" ></img>
+            </div>
+            <div id="list-titles">
             <h1>{`\u00A0\u00A0\u00A0 ${listName}`}</h1>
             </div>
             </div>
-            <ul>
+            <ul className="song-list-ul">
+                <div id="list-line">
             {
                 (Array.isArray(songsArray)) ? 
                 (
                         songsArray.map( (song) =>{
-                            return(<li key={song.track.id} ><img src={song.track.album.images[2].url}></img>{`\u00A0\u00A0\u00A0` + song.track.name + ' - ' + song.track.artists[0].name }</li>)
+                            return(<li key={song.track.id} ><img src={song.track.album.images[2].url}></img><strong>{`\u00A0\u00A0\u00A0` + song.track.name + ' - ' + song.track.artists[0].name }</strong></li>)
 
                         }
                         )
@@ -69,6 +70,7 @@ const ShowSongs = ({token}) => {
                     <strong>The list has not songs</strong>
                 )
             }
+            </div>
             </ul>
 
         </div>

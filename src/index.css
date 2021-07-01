@@ -23,7 +23,6 @@ code {
 }
 .inline { 
   display: inline-block; 
-  margin:10px;
   }
 
 
@@ -45,6 +44,7 @@ code {
 	padding:0px;
 	border:  0px;
 	height:170px;
+  text-align:center;
 }
 
 div#header {
@@ -68,3 +68,35 @@ div#header {
   div#footer {
   border: 0px; 
   }
+  div#list-image{
+    position: absolute;
+    width:20%;
+    margin-left:100px;
+    text-align:left;
+    margin-top: 5px;
+    display: inline-block;
+  }
+  div#list-titles{
+    width:80%;
+    margin-top: 50px;
+    margin-left:10%;
+    text-align: left;
+    float: right;
+  }
+  div#list-line{
+    width:80%;
+    margin-top: 100px;
+    margin-left:100px;
+    text-align: left;
+    float: left;
+  }
+
+.song-list-ul
+{
+  list-style-type: none;
+	
+}
+div#playlist-div{
+  text-align:center
+}
+  

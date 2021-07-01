@@ -6,7 +6,7 @@ export const CurrentActivity = (token) => {
     
     const query =  useQuery(token);
     const userQuery = useUserQuery(token);
-    const {images,id} = userQuery
+    const {display_name,images,id} = userQuery
     
     const{device, item,is_playing } = query;
 
@@ -21,7 +21,7 @@ export const CurrentActivity = (token) => {
     console.log('SoptyImage',SoptyImage)
     console.log('token',tokenValue)
     //let name = 'dds'
-    //console.log('is_playing',is_playing)
+    console.log('userQuery',userQuery)
 
     return (
         <div id ="header-app"> 
@@ -40,16 +40,16 @@ export const CurrentActivity = (token) => {
             </div>
             <div className="right">
                 {tokenValue ?(
-                    <div style={{color:"green"}} >
-                    <strong>Currently Activity</strong><br/>
-                    <strong>Is listening: </strong>{is_playing ? ('Yes'): ('No')} <br/>
-                    <strong>Band: </strong>{band}<br/>
-                    <strong>Song: </strong>{songName}<br/>
-                    <strong>Album: </strong>{album}<br/>
+                    <div style={{color:"white"}} >
+                        <h1>{display_name}'s Profile</h1>
+                        <strong>Currently is  {is_playing ? (' playing '): (' Not playing anything')} </strong> <br/>
+                        <strong>{is_playing ? (songName + ' song '): ('')}  </strong><br/>
+                    <strong>{is_playing ? ('of the band ' + band):('')} </strong><br/>
+                    <strong>{is_playing ? ('from the Album ' + album ) : ('')}</strong><br/>
                     </div>
                 ):
                 (
-                    <div><h1>Sopty Profile</h1></div>
+                    <div><h1 style={{color:"white"}}>Sopty Profile</h1></div>
                 )}
                 
 
